@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+}
+header {
+    position: sticky;
+    top: 20px;
+}
+h1 {
+    text-align: center;
+}
+nav ul {
+    text-align: center;
+    padding: 0;
+}
+nav ul li{
+    display: inline;
+    margin: 0 10px;
+}
+img {
+    display: inline
+}
+#inicio {
+    padding: 0;
+}
+section {
+    padding-top: 20px;
+    height: 100vh;
+}
