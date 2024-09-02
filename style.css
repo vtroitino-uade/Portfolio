@@ -1,28 +1,75 @@
-* {
-    box-sizing: border-box;
+@font-face {
+  font-family: Montserrat;
+  src: url("./assets/font/Montserrat-Regular.ttf");
 }
-header {
-    position: sticky;
-    top: 20px;
+@font-face {
+  font-family: "Montserrat-SemiBold";
+  src: url("./assets/font/Montserrat-SemiBold.ttf");
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Montserrat, sans-serif, system-ui, -apple-system;
+  font-size: 20px;
+}
+#selected {
+  background-image: url("./assets/svg/rectangle.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#selected a{
+  color: #262727;
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: #1C8F97;
 }
 h1 {
-    text-align: center;
+  font-size: 3.2rem;
+}
+h2 {
+  font-family: Montserrat-SemiBold, sans-serif, system-ui, -apple-system;
+  font-size: 1.8rem;
+}
+h3 {
+  font-family: Montserrat-SemiBold, sans-serif, system-ui, -apple-system;
+  font-size: 1.4rem;
+}
+main {
+  flex-grow: 1;
+  background-color: white;
+  border-radius: 20px;
+}
+footer p {
+  margin: 0;
+  padding: 20px 0;
 }
 nav ul {
-    text-align: center;
-    padding: 0;
+  display: flex;
+  height: 48px;
+  margin: 0;
+  padding: 0;
 }
-nav ul li{
-    display: inline;
-    margin: 0 10px;
+nav ul li {
+  height: inherit;
+  display: inline-flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+nav ul li a {
+  text-decoration: none;
+  color: white;
 }
 img {
-    display: inline
+  display: inline;
 }
-#inicio {
-    padding: 0;
-}
-section {
-    padding-top: 20px;
-    height: 100vh;
+div {
+  display: flex;
+  flex-direction: column;
 }
