@@ -17,7 +17,7 @@
   --dark-accent: #2e6066;
   --primary-text-color: #191f1f;
   --secondary-text-color: #2a3536;
-  --light-text-color: #8e8e93;
+  --light-text-color: #6e6e7e;
 
   /* Text size */
   --desktop-font-size: 20px;
@@ -50,6 +50,7 @@ h1 {
 h2,
 h3 {
   font-family: Montserrat-SemiBold, sans-serif, system-ui, -apple-system;
+  color: var(--secondary-text-color);
   margin: 0;
 }
 h2 {
@@ -58,10 +59,17 @@ h2 {
 h3 {
   font-size: 1.4rem;
 }
+p {
+  color: var(--light-text-color);
+  text-align: left;
+}
+a {
+  text-decoration: none;
+}
 header {
   padding: 0 15%;
 }
-main {
+#inicio {
   display: flex;
   justify-content: space-around;
   background-color: var(--secondary-color);
@@ -70,11 +78,53 @@ main {
   flex-grow: 1;
   overflow: hidden;
 }
+#servicios {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--secondary-color);
+  border-radius: 20px;
+  padding: 35px 15%;
+  flex-grow: 1;
+  overflow: hidden;
+}
+.card-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 20px;
+  width: 400px;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px var(--light-text-color);
+  transition: box-shadow 0.2s ease-in;
+}
+.card:hover {
+  box-shadow: 0px 0px 10px var(--dark-accent);
+}
+.card-info {
+  text-align: left;
+  padding: 20px;
+  gap: 5px;
+}
+.card-icons {
+  color: var(--primary-text-color);
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
 footer p {
   margin: 0;
   padding: 25px 0;
-  color: var(--light-accent);
+  color: var(--primary-text-color);
   font-weight: bold;
+  text-align: center;
 }
 nav ul {
   display: flex;
@@ -90,8 +140,7 @@ nav ul li {
   justify-content: center;
 }
 nav ul li a {
-  text-decoration: none;
-  color: white;
+  color: var(--secondary-color);
 }
 #selected {
   background-image: url("./assets/svg/rectangle.svg");
@@ -145,6 +194,7 @@ nav ul li a {
   background: var(--dark-accent);
   text-decoration: none;
   border-radius: 20px;
+  transition: background-color 0.2s ease-in;
 }
 .button h3 {
   color: var(--secondary-color);
@@ -155,4 +205,19 @@ nav ul li a {
 }
 .button:hover h3 {
   color: var(--dark-accent);
+}
+
+/* Iconos */
+.icon {
+  width: 45px;
+  height: 45px;
+}
+.html {
+  background: url("./assets/svg/html.svg");
+}
+.css {
+  background: url("./assets/svg/css.svg");
+}
+.js {
+  background: url("./assets/svg/js.svg");
 }
