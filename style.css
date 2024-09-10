@@ -14,7 +14,7 @@
   /* Colors */
   --main-color: #32a7b6;
   --secondary-color: white;
-  --dark-accent: #2e6066;
+  --dark-accent: #2e6066;s
   --primary-text-color: #191f1f;
   --secondary-text-color: #2a3536;
   --light-text-color: #6e6e7e;
@@ -69,25 +69,32 @@ a {
 header {
   padding: 0 15%;
 }
-#inicio {
+main {
   display: flex;
-  justify-content: space-around;
-  background-color: var(--secondary-color);
-  border-radius: 20px;
-  padding: 0 15%;
-  flex-grow: 1;
-  overflow: hidden;
-}
-#servicios {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: space-between;
   background-color: var(--secondary-color);
   border-radius: 20px;
   padding: 35px 15%;
   flex-grow: 1;
   overflow: hidden;
+}
+#inicio {
+  justify-content: space-around;
+  padding: 0 15%;
+}
+#servicios {
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#sobre-mi {
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+#contacto {
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 .card-container {
   display: flex;
@@ -181,6 +188,10 @@ nav ul li a {
 }
 .presentation h3 {
   color: var(--light-text-color);
+}
+button {
+  border: none;
+  cursor: pointer;
 }
 .button {
   display: flex;
