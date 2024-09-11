@@ -1,20 +1,20 @@
 @font-face {
   font-family: Notable;
-  src: url("./assets/font/Notable-Regular.ttf");
+  src: url('./assets/font/Notable-Regular.ttf');
 }
 @font-face {
   font-family: Montserrat;
-  src: url("./assets/font/Montserrat-Regular.ttf");
+  src: url('./assets/font/Montserrat-Regular.ttf');
 }
 @font-face {
-  font-family: "Montserrat-SemiBold";
-  src: url("./assets/font/Montserrat-SemiBold.ttf");
+  font-family: 'Montserrat-SemiBold';
+  src: url('./assets/font/Montserrat-SemiBold.ttf');
 }
 :root {
   /* Colors */
   --main-color: #32a7b6;
   --secondary-color: white;
-  --dark-accent: #2e6066;s
+  --dark-accent: #2e6066;
   --primary-text-color: #191f1f;
   --secondary-text-color: #2a3536;
   --light-text-color: #6e6e7e;
@@ -94,7 +94,7 @@ main {
 #contacto {
   align-items: center;
   flex-direction: column;
-  justify-content: flex-start;
+  gap: 35px;
 }
 .card-container {
   display: flex;
@@ -150,7 +150,7 @@ nav ul li a {
   color: var(--secondary-color);
 }
 #selected {
-  background-image: url("./assets/svg/rectangle.svg");
+  background-image: url('./assets/svg/rectangle.svg');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -192,6 +192,7 @@ nav ul li a {
 button {
   border: none;
   cursor: pointer;
+  justify-content: flex-end;
 }
 .button {
   display: flex;
@@ -217,18 +218,58 @@ button {
 .button:hover h3 {
   color: var(--dark-accent);
 }
-
+form {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+}
+label {
+  text-align: left;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--light-text-color);
+}
+input,
+textarea {
+  border: none;
+  background: var(--secondary-color);
+  box-shadow: 0px 0px 15px var(--light-text-color);
+  border-radius: 20px;
+  padding: 10px 0px 10px 10px;
+  height: 50px;
+  transition: box-shadow 0.2s ease-in;
+}
+input:hover,
+textarea:hover {
+  box-shadow: 0px 0px 20px var(--dark-accent);
+}
+textarea {
+  resize: none;
+  flex: 1;
+}
+.form-input {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  gap: 10px;
+}
+form:nth-child(3) {
+  flex: 1;
+}
 /* Iconos */
 .icon {
   width: 45px;
   height: 45px;
 }
 .html {
-  background: url("./assets/svg/html.svg");
+  background: url('./assets/svg/html.svg');
 }
 .css {
-  background: url("./assets/svg/css.svg");
+  background: url('./assets/svg/css.svg');
 }
 .js {
-  background: url("./assets/svg/js.svg");
+  background: url('./assets/svg/js.svg');
 }

@@ -18,15 +18,23 @@
       </nav>
     </header>
     <main id="contacto">
-      <h2>Contactame</h2>
-      <p>Si te interesa mi perfil, pongámonos en contacto.</p>
+      <div class="contacto-title">
+        <h2>Contactame</h2>
+        <p>Si te interesa mi perfil, pongámonos en contacto.</p>
+      </div>
         <form action="">
-          <label for="nombre">Nombre:</label>
-          <input type="text" name="nombre" id="nombre" />
-          <label for="email">Email:</label>
-          <input type="email" name="email" id="email" />
-          <label for="mensaje">Mensaje:</label>
-          <textarea name="mensaje" id="mensaje"></textarea>
+          <div class="form-input">
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" id="nombre" />
+          </div>
+          <div class="form-input">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" />
+          </div>
+          <div class="form-input">
+            <label for="mensaje">Mensaje</label>
+            <textarea name="mensaje" id="mensaje"></textarea>
+          </div>
           <button class="button"><h3>Enviar</h3></button>
         </form>
       </div>
