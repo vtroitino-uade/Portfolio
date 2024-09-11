@@ -1,14 +1,14 @@
 @font-face {
   font-family: Notable;
-  src: url('./assets/font/Notable-Regular.ttf');
+  src: url("./assets/font/Notable-Regular.ttf");
 }
 @font-face {
   font-family: Montserrat;
-  src: url('./assets/font/Montserrat-Regular.ttf');
+  src: url("./assets/font/Montserrat-Regular.ttf");
 }
 @font-face {
-  font-family: 'Montserrat-SemiBold';
-  src: url('./assets/font/Montserrat-SemiBold.ttf');
+  font-family: "Montserrat-SemiBold";
+  src: url("./assets/font/Montserrat-SemiBold.ttf");
 }
 :root {
   /* Colors */
@@ -19,7 +19,7 @@
   --secondary-text-color: #2a3536;
   --light-text-color: #6e6e7e;
 
-  /* Text size */
+  /* Sizes */
   --desktop-font-size: 20px;
   --tablet-font-size: 16px;
   --mobile-font-size: 14px;
@@ -61,6 +61,8 @@ h3 {
 }
 p {
   color: var(--light-text-color);
+  margin: 0;
+  font-weight: bold;
   text-align: left;
 }
 a {
@@ -97,10 +99,19 @@ main {
   gap: 35px;
 }
 .card-container {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-grow: 1;
+}
+.card-link a {
+  display: flex;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+.card-link a i{
+  background-color: var(--dark-accent);
 }
 .card {
   display: flex;
@@ -116,9 +127,11 @@ main {
   box-shadow: 0px 0px 10px var(--dark-accent);
 }
 .card-info {
+  display: flex;
+  flex-direction: column;
   text-align: left;
   padding: 20px;
-  gap: 5px;
+  gap: 15px;
 }
 .card-icons {
   color: var(--primary-text-color);
@@ -126,12 +139,32 @@ main {
   align-items: flex-end;
   gap: 10px;
 }
+footer {
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
 footer p {
   margin: 0;
-  padding: 25px 0;
   color: var(--primary-text-color);
   font-weight: bold;
   text-align: center;
+}
+.footer-icons {
+  display: flex;
+  gap: 5px;
+  align-self: center;
+  justify-content: center;
+}
+.footer-icons .icon {
+  width: 1.25em;
+  height: 1.25em;
+  transition: transfom 0.2s ease-in;
+}
+.footer-icons .icon:hover {
+  transform: scale(1.2);
 }
 nav ul {
   display: flex;
@@ -150,7 +183,7 @@ nav ul li a {
   color: var(--secondary-color);
 }
 #selected {
-  background-image: url('./assets/svg/rectangle.svg');
+  background-image: url("./assets/svg/rectangle.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -218,9 +251,19 @@ button {
 .button:hover h3 {
   color: var(--dark-accent);
 }
+.contacto-p {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+.contacto-p i {
+  background-color: var(--light-text-color);
+  width: 1.25em;
+  height: 1.25em;
+}
 form {
   display: flex;
-  flex: 1;
+  flex-grow: 1;
   flex-direction: column;
   align-items: center;
   width: 100%;
@@ -230,7 +273,7 @@ label {
   text-align: left;
   font-size: 1.4rem;
   font-weight: bold;
-  color: var(--light-text-color);
+  padding-left: 10px;
 }
 input,
 textarea {
@@ -242,34 +285,61 @@ textarea {
   height: 50px;
   transition: box-shadow 0.2s ease-in;
 }
-input:hover,
-textarea:hover {
+input:focus,
+textarea:focus {
+  outline: none;
   box-shadow: 0px 0px 20px var(--dark-accent);
 }
 textarea {
   resize: none;
-  flex: 1;
+  flex-grow: 1;
 }
 .form-input {
   display: flex;
   flex-direction: column;
   width: 60%;
-  gap: 10px;
+  min-width: 500px;
+  gap: 20px;
 }
-form:nth-child(3) {
-  flex: 1;
+.form-input:nth-child(3) {
+  flex-grow: 1;
 }
+
 /* Iconos */
 .icon {
-  width: 45px;
-  height: 45px;
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  background-color: var(--secondary-text-color);
+  width: 2.5em;
+  height: 2.5em;
 }
 .html {
-  background: url('./assets/svg/html.svg');
+  -webkit-mask-image: url("./assets/svg/html.svg");
+  mask-image: url("./assets/svg/html.svg");
 }
 .css {
-  background: url('./assets/svg/css.svg');
+  -webkit-mask-image: url("./assets/svg/css.svg");
+  mask-image: url("./assets/svg/css.svg");
 }
 .js {
-  background: url('./assets/svg/js.svg');
+  -webkit-mask-image: url("./assets/svg/js.svg");
+  mask-image: url("./assets/svg/js.svg");
+}
+.linkedin {
+  -webkit-mask-image: url("./assets/svg/linkedin.svg");
+  mask-image: url("./assets/svg/linkedin.svg");
+}
+.github {
+  -webkit-mask-image: url("./assets/svg/github.svg");
+  mask-image: url("./assets/svg/github.svg");
+}
+.mail {
+  -webkit-mask-image: url("./assets/svg/mail.svg");
+  mask-image: url("./assets/svg/mail.svg");
+}
+.code {
+  -webkit-mask-image: url("./assets/svg/code.svg");
+  mask-image: url("./assets/svg/code.svg");
 }
