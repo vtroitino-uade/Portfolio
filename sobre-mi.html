@@ -4,33 +4,61 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
-    <title>Portfolio • Sobre Mi</title>
+    <title>VBT • Sobre Mi</title>
   </head>
   <body>
     <header>
-      <nav>
+      <nav id="desktop-navbar">
         <ul>
           <li><a href="./index.html">Inicio</a></li>
-          <li id="selected"><a href="./sobre-mi.html">Sobre mi</a></li>
+          <li id="d-selected"><a href="./sobre-mi.html">Sobre mi</a></li>
+          <li><a href="./servicios.html">Servicios</a></li>
+          <li><a href="./contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+      <nav id="mobile-navbar">
+        <ul>
+          <li><a href="./index.html">Inicio</a></li>
+          <li id="m-selected"><a href="./sobre-mi.html">Sobre mi</a></li>
           <li><a href="./servicios.html">Servicios</a></li>
           <li><a href="./contacto.html">Contacto</a></li>
         </ul>
       </nav>
     </header>
     <main id="sobre-mi">
-      <h2>Sobre mi</h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae,
-        est. Consequatur obcaecati aliquam in perspiciatis at facilis placeat
-        illo accusamus est quos, explicabo pariatur cupiditate accusantium harum
-        a error autem.
-      </p>
+      <h2>Conoceme...</h2>
+      <div class="sobre-mi-p">
+        <p>
+          Soy Valentin Blas Troitiño, Técnico en Computación graduado del
+          Instituto Industrial Luis A. Huergo. Especializado en transformar
+          diseños prototipados en experiencias web interactivas. Trabajo con
+          herramientas como Tailwind y Vue, buscando constantemente mejorar mis
+          habilidades y crecer como profesional en el mundo del desarrollo web.
+          Mi objetivo es ofrecer soluciones visualmente atractivas y
+          técnicamente eficientes.
+        </p>
+        <p>
+          Mi meta es consolidarme como un profesional en el campo del desarrollo
+          de software, contribuyendo al crecimiento de los equipos en los que me
+          integre. Creo firmemente en la importancia de mantenerse actualizado,
+          asumir nuevos desafíos y trabajar con pasión para generar un impacto
+          positivo tanto en los proyectos como en las personas.
+        </p>
+      </div>
     </main>
     <footer>
       <p>&copy; 2024 Valentin B. Troitiño</p>
       <div class="footer-icons">
-        <a class="icon linkedin" href="#"></a>
-        <a class="icon github" href="#"></a>
+        <a
+          class="icon linkedin"
+          target="_blank"
+          href="https://www.linkedin.com/in/vbtroitino/"
+        ></a>
+        <a
+          class="icon github"
+          target="_blank"
+          href="https://github.com/vtroitio"
+        ></a>
       </div>
     </footer>
   </body>

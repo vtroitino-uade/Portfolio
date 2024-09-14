@@ -4,15 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
-    <title>Portfolio • Servicios</title>
+    <title>VBT • Servicios</title>
   </head>
   <body>
     <header>
-      <nav>
+      <nav id="desktop-navbar">
         <ul>
           <li><a href="./index.html">Inicio</a></li>
           <li><a href="./sobre-mi.html">Sobre mi</a></li>
-          <li id="selected"><a href="./servicios.html">Servicios</a></li>
+          <li id="d-selected"><a href="./servicios.html">Servicios</a></li>
+          <li><a href="./contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+      <nav id="mobile-navbar">
+        <ul>
+          <li><a href="./index.html">Inicio</a></li>
+          <li><a href="./sobre-mi.html">Sobre mi</a></li>
+          <li id="m-selected"><a href="./servicios.html">Servicios</a></li>
           <li><a href="./contacto.html">Contacto</a></li>
         </ul>
       </nav>
@@ -30,7 +38,10 @@
       <div class="card-container">
         <a href="https://cisel.netlify.app/" target="_blank">
           <div class="card">
-            <img src="./assets/img/cisel.png" alt="" />
+            <img
+              src="./assets/img/cisel.png"
+              alt="Previsualización a la página de Cisel"
+            />
             <div class="card-info">
               <h3>Cisel</h3>
               <p>
@@ -58,8 +69,16 @@
     <footer>
       <p>&copy; 2024 Valentin B. Troitiño</p>
       <div class="footer-icons">
-        <a class="icon linkedin" href="#"></a>
-        <a class="icon github" href="#"></a>
+        <a
+          class="icon linkedin"
+          target="_blank"
+          href="https://www.linkedin.com/in/vbtroitino/"
+        ></a>
+        <a
+          class="icon github"
+          target="_blank"
+          href="https://github.com/vtroitio"
+        ></a>
       </div>
     </footer>
   </body>

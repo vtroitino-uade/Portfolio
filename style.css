@@ -1,6 +1,7 @@
 @font-face {
   font-family: Notable;
   src: url("./assets/font/Notable-Regular.ttf");
+  font-weight: 400;
 }
 @font-face {
   font-family: Montserrat;
@@ -21,16 +22,18 @@
 
   /* Sizes */
   --desktop-font-size: 20px;
-  --tablet-font-size: 16px;
-  --mobile-font-size: 14px;
+  --tablet-font-size: 14px;
+  --cel-font-size: 8px;
 }
-
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
   font-family: Montserrat, sans-serif, system-ui, -apple-system;
   font-size: var(--desktop-font-size);
 }
 body {
+  position: relative;
   margin: 0;
   padding-top: 35px;
   min-height: 100vh;
@@ -39,7 +42,7 @@ body {
   text-align: center;
   background-color: var(--main-color);
   color: var(--secondary-text-color);
-  overflow-x: hidden;
+  overflow: hidden auto;
 }
 h1 {
   font-family: Notable, sans-serif, system-ui, -apple-system;
@@ -68,35 +71,25 @@ p {
 a {
   text-decoration: none;
 }
-header {
-  padding: 0 15%;
-}
 main {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-color: var(--secondary-color);
   border-radius: 20px;
-  padding: 35px 15%;
+  padding: 0 15%;
+  gap: 50px;
   flex-grow: 1;
   overflow: hidden;
 }
 #inicio {
+  flex-direction: row;
+  align-items: stretch;
   justify-content: space-around;
-  padding: 0 15%;
-}
-#servicios {
-  align-items: center;
-  flex-direction: column;
-  justify-content: space-between;
-}
-#sobre-mi {
-  align-items: center;
-  flex-direction: column;
-  justify-content: flex-start;
 }
 #contacto {
-  align-items: center;
-  flex-direction: column;
-  gap: 35px;
+  justify-content: center;
 }
 .card-container {
   position: relative;
@@ -110,7 +103,7 @@ main {
   bottom: 20px;
   right: 20px;
 }
-.card-link a i{
+.card-link a i {
   background-color: var(--dark-accent);
 }
 .card {
@@ -141,7 +134,7 @@ main {
 }
 footer {
   display: flex;
-  height: 50px;
+  height: 2.5rem;
   justify-content: center;
   align-items: center;
   gap: 15px;
@@ -168,7 +161,8 @@ footer p {
 }
 nav ul {
   display: flex;
-  height: 48px;
+  justify-content: space-around;
+  height: 2.5rem;
   margin: 0;
   padding: 0;
 }
@@ -182,14 +176,28 @@ nav ul li {
 nav ul li a {
   color: var(--secondary-color);
 }
-#selected {
+nav ul li a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 1px;
+  background: var(--secondary-color);
+  transition: width 0.2s ease-in;
+}
+nav ul li a:hover::after {
+  width: 100%;
+}
+#mobile-navbar {
+  display: none;
+}
+#d-selected {
   background-image: url("./assets/svg/rectangle.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  min-width: 272px;
+  min-width: 300px;
 }
-#selected a {
+#d-selected a {
   color: var(--secondary-text-color);
 }
 .inicio-content {
@@ -205,11 +213,13 @@ nav ul li a {
   display: flex;
   align-items: center;
   justify-content: center;
+  max-width: 40%;
 }
 .inicio-image img {
-  flex-shrink: 0;
-  min-width: 100%;
-  min-height: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: visible;
 }
 .presentation {
   text-align: left;
@@ -251,6 +261,11 @@ button {
 .button:hover h3 {
   color: var(--dark-accent);
 }
+.sobre-mi-p {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 .contacto-p {
   display: flex;
   flex-direction: row;
@@ -261,9 +276,11 @@ button {
   width: 1.25em;
   height: 1.25em;
 }
+.title h2 {
+  margin-bottom: 20px;
+}
 form {
   display: flex;
-  flex-grow: 1;
   flex-direction: column;
   align-items: center;
   width: 100%;
@@ -281,7 +298,7 @@ textarea {
   background: var(--secondary-color);
   box-shadow: 0px 0px 15px var(--light-text-color);
   border-radius: 20px;
-  padding: 10px 0px 10px 10px;
+  padding: 10px;
   height: 50px;
   transition: box-shadow 0.2s ease-in;
 }
@@ -292,17 +309,13 @@ textarea:focus {
 }
 textarea {
   resize: none;
-  flex-grow: 1;
+  height: 200px;
 }
 .form-input {
   display: flex;
   flex-direction: column;
   width: 60%;
-  min-width: 500px;
   gap: 20px;
-}
-.form-input:nth-child(3) {
-  flex-grow: 1;
 }
 
 /* Iconos */
@@ -342,4 +355,65 @@ textarea {
 .code {
   -webkit-mask-image: url("./assets/svg/code.svg");
   mask-image: url("./assets/svg/code.svg");
+}
+
+@media (max-width: 768px) {
+  * {
+    font-size: var(--tablet-font-size);
+  }
+  body {
+    height: 100svh;
+    padding: 0;
+  }
+  header {
+    display: flex;
+    position: absolute;
+    right: 0;
+    width: 5rem;
+    top: calc(50% - 2.5rem);
+    background-color: red;
+  }
+  nav ul {
+    flex-direction: column;
+    height: fit-contents;
+  }
+  main {
+    border-radius: 0 0 20px 20px;
+    overflow: hidden auto;
+    direction: rtl;
+  }
+  #desktop-navbar {
+    display: none;
+  }
+  #mobile-navbar {
+    display: block;
+  }
+  #mobile-navbar ul {
+    height: 100%;
+  }
+  #inicio {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 0;
+    padding-right: 1rem;
+  }
+  .inicio-content {
+    padding-top: 1rem;
+    align-items: center;
+  }
+  .presentation h1,
+  .presentation h3 {
+    width: 100%;
+    text-align: center;
+  }
+  .inicio-image {
+    /* max-height: 40%; */
+    max-width: 85%;
+  }
+}
+@media (max-width: 425px) {
+  * {
+    font-size: var(--cel-font-size);
+  }
 }

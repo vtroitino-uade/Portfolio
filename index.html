@@ -4,13 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
-    <title>Portfolio • Inicio</title>
+    <title>VBT • Inicio</title>
   </head>
   <body>
     <header>
-      <nav>
+      <nav id="desktop-navbar">
         <ul>
-          <li id="selected"><a href="./index.html">Inicio</a></li>
+          <li id="d-selected"><a href="./index.html">Inicio</a></li>
+          <li><a href="./sobre-mi.html">Sobre mi</a></li>
+          <li><a href="./servicios.html">Servicios</a></li>
+          <li><a href="./contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+      <nav id="mobile-navbar">
+        <ul>
+          <li id="m-selected"><a href="./index.html">Inicio</a></li>
           <li><a href="./sobre-mi.html">Sobre mi</a></li>
           <li><a href="./servicios.html">Servicios</a></li>
           <li><a href="./contacto.html">Contacto</a></li>
@@ -23,13 +31,17 @@
           <h1>Valentin Blas Troitiño</h1>
           <h3>Desarrollador De Software</h3>
         </div>
-        <a class="button" href="valentin_troitiño_cv.pdf" target="_blank">
+        <a
+          class="button"
+          href="./assets/valentin_troitiño_cv.pdf"
+          target="_blank"
+        >
           <h3>Ver CV</h3>
         </a>
       </div>
       <div class="inicio-image">
         <img
-          src="./assets/img/valentin-fake.png"
+          src="./assets/img/valentin-troitiño.webp"
           alt="Fotografía en primer plano de Valentin Blas Troitiño"
         />
       </div>
@@ -37,8 +49,16 @@
     <footer>
       <p>&copy; 2024 Valentin B. Troitiño</p>
       <div class="footer-icons">
-        <a class="icon linkedin" href="#"></a>
-        <a class="icon github" href="#"></a>
+        <a
+          class="icon linkedin"
+          target="_blank"
+          href="https://www.linkedin.com/in/vbtroitino/"
+        ></a>
+        <a
+          class="icon github"
+          target="_blank"
+          href="https://github.com/vtroitio"
+        ></a>
       </div>
     </footer>
   </body>
