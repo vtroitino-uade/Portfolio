@@ -22,8 +22,8 @@
 
   /* Sizes */
   --desktop-font-size: 20px;
-  --tablet-font-size: 14px;
-  --cel-font-size: 8px;
+  --tablet-font-size: 18px;
+  --cel-font-size: 14px;
 }
 * {
   margin: 0;
@@ -110,8 +110,8 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 20rem;
   border-radius: 20px;
-  width: 400px;
   overflow: hidden;
   box-shadow: 0px 4px 10px var(--light-text-color);
   transition: box-shadow 0.2s ease-in;
@@ -134,7 +134,7 @@ main {
 }
 footer {
   display: flex;
-  height: 2.5rem;
+  min-height: 2.5rem;
   justify-content: center;
   align-items: center;
   gap: 15px;
@@ -152,8 +152,8 @@ footer p {
   justify-content: center;
 }
 .footer-icons .icon {
-  width: 1.25em;
-  height: 1.25em;
+  width: 2rem;
+  height: 2rem;
   transition: transfom 0.2s ease-in;
 }
 .footer-icons .icon:hover {
@@ -242,10 +242,8 @@ button {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 10px 20px;
+  padding: 1rem 1.5rem;
   gap: 5px;
-  width: 185px;
-  height: 60px;
   background: var(--dark-accent);
   text-decoration: none;
   border-radius: 20px;
@@ -299,7 +297,7 @@ textarea {
   box-shadow: 0px 0px 15px var(--light-text-color);
   border-radius: 20px;
   padding: 10px;
-  height: 50px;
+  height: 2.5rem;
   transition: box-shadow 0.2s ease-in;
 }
 input:focus,
@@ -318,6 +316,151 @@ textarea {
   gap: 20px;
 }
 
+/* Responsive */
+@media (max-width: 768px) {
+  * {
+    font-size: var(--tablet-font-size);
+  }
+  h2,
+  div {
+    direction: ltr;
+  }
+  body {
+    min-height: 100dvh;
+    padding: 0;
+  }
+  header {
+    display: flex;
+    position: absolute;
+    transform: translateY(-50%);
+    right: 0;
+    top: calc(50% - 2.5rem);
+  }
+  main {
+    border-radius: 0 0 20px 20px;
+    direction: rtl;
+    height: 95dvh;
+    flex-grow: 0;
+    padding: 0 25% 0 10%;
+    overflow: hidden auto;
+  }
+  footer {
+    height: 5dvh;
+  }
+  form button {
+    width: 100%;
+  }
+  #inicio {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 0;
+    /* flex: 1; */
+  }
+  #desktop-navbar {
+    display: none;
+  }
+  #mobile-navbar {
+    z-index: 0;
+    display: block;
+  }
+  #mobile-navbar ul {
+    flex-direction: column;
+    gap: 3rem;
+    height: 100%;
+  }
+  #mobile-navbar ul li {
+    width: 4rem;
+    height: 5rem;
+  }
+  #mobile-navbar ul li a {
+    width: 3rem;
+    height: 3rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  #mobile-navbar ul li a::after {
+    transition: none;
+  }
+  #mobile-navbar ul li a:hover::after {
+    width: 0;
+  }
+  #m-selected {
+    background-image: url("./assets/svg/s-rectangle.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  #m-selected a {
+    background-color: white;
+  }
+  .inicio-content {
+    padding-top: 4rem;
+    align-items: center;
+  }
+  .presentation h1,
+  .presentation h3 {
+    width: 100%;
+    text-align: center;
+  }
+  .inicio-image {
+    max-width: 80%;
+  }
+  .form-input {
+    width: 100%;
+  }
+  .card:hover {
+    box-shadow: 0px 4px 10px var(--light-text-color);
+  }
+  .footer-icons .icon:hover {
+    transform: none;
+  }
+  .button:hover {
+    border: none;
+    background-color: var(--dark-accent);
+  }
+  .button:hover h3 {
+    color: var(--secondary-color);
+  }
+  .button:hover {
+    border: none;
+    background-color: var(--dark-accent);
+  }
+  .button:hover h3 {
+    color: var(--secondary-color);
+  }
+  .card:active {
+    box-shadow: 0px 0px 10px var(--dark-accent);
+  }
+  .footer-icons .icon:active {
+    transform: scale(1.2);
+  }
+  .button:active {
+    border: 1px solid var(--dark-accent);
+    background-color: var(--secondary-color);
+  }
+  .button:active h3 {
+    color: var(--dark-accent);
+  }
+}
+@media (max-width: 430px) {
+  * {
+    font-size: var(--cel-font-size);
+  }
+  body {
+    /* Previene que safari agrande el tamaño de la fuente */
+    -webkit-text-size-adjust: none;
+  }
+  #mobile-navbar ul li {
+    width: 3rem;
+    height: 4rem;
+  }
+  #mobile-navbar ul li a {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
 /* Iconos */
 .icon {
   -webkit-mask-size: contain;
@@ -325,8 +468,8 @@ textarea {
   mask-size: contain;
   mask-repeat: no-repeat;
   background-color: var(--secondary-text-color);
-  width: 2.5em;
-  height: 2.5em;
+  width: 3rem;
+  height: 3rem;
 }
 .html {
   -webkit-mask-image: url("./assets/svg/html.svg");
@@ -348,72 +491,23 @@ textarea {
   -webkit-mask-image: url("./assets/svg/github.svg");
   mask-image: url("./assets/svg/github.svg");
 }
-.mail {
-  -webkit-mask-image: url("./assets/svg/mail.svg");
-  mask-image: url("./assets/svg/mail.svg");
-}
 .code {
   -webkit-mask-image: url("./assets/svg/code.svg");
   mask-image: url("./assets/svg/code.svg");
 }
-
-@media (max-width: 768px) {
-  * {
-    font-size: var(--tablet-font-size);
-  }
-  body {
-    height: 100svh;
-    padding: 0;
-  }
-  header {
-    display: flex;
-    position: absolute;
-    right: 0;
-    width: 5rem;
-    top: calc(50% - 2.5rem);
-    background-color: red;
-  }
-  nav ul {
-    flex-direction: column;
-    height: fit-contents;
-  }
-  main {
-    border-radius: 0 0 20px 20px;
-    overflow: hidden auto;
-    direction: rtl;
-  }
-  #desktop-navbar {
-    display: none;
-  }
-  #mobile-navbar {
-    display: block;
-  }
-  #mobile-navbar ul {
-    height: 100%;
-  }
-  #inicio {
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    padding-left: 0;
-    padding-right: 1rem;
-  }
-  .inicio-content {
-    padding-top: 1rem;
-    align-items: center;
-  }
-  .presentation h1,
-  .presentation h3 {
-    width: 100%;
-    text-align: center;
-  }
-  .inicio-image {
-    /* max-height: 40%; */
-    max-width: 85%;
-  }
+.home {
+  -webkit-mask-image: url("./assets/svg/home.svg");
+  mask-image: url("./assets/svg/home.svg");
 }
-@media (max-width: 425px) {
-  * {
-    font-size: var(--cel-font-size);
-  }
+.user {
+  -webkit-mask-image: url("./assets/svg/user.svg");
+  mask-image: url("./assets/svg/user.svg");
+}
+.offer {
+  -webkit-mask-image: url("./assets/svg/offer.svg");
+  mask-image: url("./assets/svg/offer.svg");
+}
+.mail {
+  -webkit-mask-image: url("./assets/svg/mail.svg");
+  mask-image: url("./assets/svg/mail.svg");
 }
