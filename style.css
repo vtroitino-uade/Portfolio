@@ -231,6 +231,10 @@ nav ul li a:hover::after {
 .presentation h3 {
   color: var(--light-text-color);
 }
+.presentation h1,
+.presentation h3 {
+  text-shadow: 0 0 20px #ffffffaa;
+}
 button {
   border: none;
   cursor: pointer;
@@ -315,10 +319,12 @@ textarea {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   * {
     font-size: var(--tablet-font-size);
   }
+}
+@media (max-width: 768px) {
   h2,
   div {
     direction: ltr;
