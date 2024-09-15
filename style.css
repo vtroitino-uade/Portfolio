@@ -245,6 +245,7 @@ button {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  height: 3.2rem;
   padding: 1rem 1.5rem;
   background: var(--dark-accent);
   text-decoration: none;
