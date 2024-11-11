@@ -14,6 +14,7 @@
 :root {
   /* Colors */
   --main-color: #32a7b6;
+  --dm-main-color: #121212;
   --secondary-color: white;
   --dark-accent: #2e6066;
   --primary-text-color: #191f1f;
@@ -131,6 +132,41 @@ main {
   display: flex;
   align-items: flex-end;
   gap: 10px;
+}
+body.dark-mode {
+  background-color: var(--dm-main-color);
+  color: #ffffff;
+}
+h1.dark-mode,
+h2.dark-mode,
+h3.dark-mode,
+p.dark-mode,
+a.dark-mode {
+  color: #ffffff;
+}
+main.dark-mode {
+  background-color: #1e1e1e;
+}
+.card.dark-mode {
+  box-shadow: 0px 4px 10px #333333;
+}
+.card-info.dark-mode {
+  color: #ffffff;
+}
+.card-icons.dark-mode {
+  color: #ffffff;
+}
+footer.dark-mode {
+  background-color: #1e1e1e;
+}
+.footer-icons a.dark-mode {
+  background-color: #ffffff;
+}
+#d-selected.dark-mode {
+  background-image: url("./assets/svg/rectangle-dark.svg");
+}
+#d-selected a.dark-mode {
+  color: #ffffff;
 }
 footer {
   display: flex;
@@ -317,6 +353,11 @@ textarea {
   flex-direction: column;
   width: 60%;
   gap: 1rem;
+}
+.error-message {
+  color: red;
+  font-size: 1.2rem;
+  text-align: left;
 }
 
 /* Responsive */
@@ -515,4 +556,8 @@ textarea {
 .mail {
   -webkit-mask-image: url("./assets/svg/mail.svg");
   mask-image: url("./assets/svg/mail.svg");
+}
+.moon {
+  -webkit-mask-image: url("./assets/svg/moon.svg");
+  mask-image: url("./assets/svg/moon.svg");
 }
